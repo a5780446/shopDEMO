@@ -43,6 +43,7 @@
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style6">
+                        <asp:Button ID="Button4" runat="server" Height="42px" OnClick="Button4_Click" Text="返回" Width="82px" />
                         <br />
                         <br />
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical" Height="386px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="880px" DataKeyNames="id">
@@ -62,7 +63,7 @@
                                 <asp:BoundField DataField="date" HeaderText="留言日期" SortExpression="date">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:CommandField ShowSelectButton="True">
+                                <asp:CommandField ShowSelectButton="True" SelectText="查看留言">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:CommandField>
                             </Columns>
