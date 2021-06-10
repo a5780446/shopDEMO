@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="homepage.aspx" title="首頁"  description="" >
+	<siteMapNode url="~/product/shoppage.aspx" title="全部商品"  description="" />
+	<siteMapNode url="~/product/man.aspx" title="Man"  description="" />
+	  <siteMapNode url="" title="男生上著"  description="" CommandName="selman8" />
+	  <siteMapNode url="" title="男生下著"  description="" CommandName="selman9"/>
+	  <siteMapNode url="" title="男生配件"  description="" CommandName="selman1"/>
+	<siteMapNode url="~/product/woman.aspx" title="Lady"  description="" />
+	  <siteMapNode url="" title="女生上著"  description="" CommandName="selwoman8"/>
+	  <siteMapNode url="" title="女生下著"  description="" CommandName="selwoman9"/>
+	  <siteMapNode url="" title="女生配件"  description="" CommandName="selwoman1"/>
+	<siteMapNode url="~/product/kid.aspx" title="Kid's"  description="" />
+	  <siteMapNode url="" title="孩童上著"  description="" CommandName="selkid8"/>
+	  <siteMapNode url="" title="孩童下著"  description="" CommandName="selkid9"/>
+	  <siteMapNode url="" title="孩童配件"  description="" CommandName="selkid1"/>
+  </siteMapNode>
+</siteMap>
+
+
+

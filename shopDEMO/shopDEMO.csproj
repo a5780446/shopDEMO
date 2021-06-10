@@ -1,0 +1,323 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D16F9B6-760C-46A7-ADCA-76178F422422}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>shopDEMO</RootNamespace>
+    <AssemblyName>shopDEMO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44369</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="backsingin.aspx" />
+    <Content Include="back\backhomepage.aspx" />
+    <Content Include="back\board ctrl.aspx" />
+    <Content Include="back\createProduct.aspx" />
+    <Content Include="back\customs ctrl.aspx" />
+    <Content Include="back\order ctrl.aspx" />
+    <Content Include="back\product ctrl.aspx" />
+    <Content Include="board.aspx" />
+    <Content Include="mamberdata.aspx" />
+    <Content Include="pay\finish.aspx" />
+    <Content Include="pay\paypage.aspx" />
+    <Content Include="pic\dress-2.jpg" />
+    <Content Include="pic\homelogo.jpg" />
+    <Content Include="pic\LOGO.png" />
+    <Content Include="pic\pant-1.jpg" />
+    <Content Include="pic\pant-3.jpg" />
+    <Content Include="pic\short-1.jpg" />
+    <Content Include="pic\swat-2.jpg" />
+    <Content Include="pic\swat2-2.jpg" />
+    <Content Include="pic\T-1.jpg" />
+    <Content Include="pic\T-3.jpg" />
+    <Content Include="product\cart.aspx" />
+    <Content Include="product\kid.aspx" />
+    <Content Include="product\man.aspx" />
+    <Content Include="product\productSHOW.aspx" />
+    <Content Include="product\shoppage.aspx" />
+    <Content Include="product\woman.aspx" />
+    <Content Include="singin.aspx" />
+    <Content Include="tool\upload.aspx" />
+    <Content Include="VIPhomepage.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="homepage.aspx" />
+    <Content Include="createID.aspx" />
+    <Content Include="create suscc.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="backsingin.aspx.cs">
+      <DependentUpon>backsingin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="backsingin.aspx.designer.cs">
+      <DependentUpon>backsingin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\backhomepage.aspx.cs">
+      <DependentUpon>backhomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\backhomepage.aspx.designer.cs">
+      <DependentUpon>backhomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\board ctrl.aspx.cs">
+      <DependentUpon>board ctrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\board ctrl.aspx.designer.cs">
+      <DependentUpon>board ctrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\createProduct.aspx.cs">
+      <DependentUpon>createProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\createProduct.aspx.designer.cs">
+      <DependentUpon>createProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\customs ctrl.aspx.cs">
+      <DependentUpon>customs ctrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\customs ctrl.aspx.designer.cs">
+      <DependentUpon>customs ctrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\order ctrl.aspx.cs">
+      <DependentUpon>order ctrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\order ctrl.aspx.designer.cs">
+      <DependentUpon>order ctrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\product ctrl.aspx.cs">
+      <DependentUpon>product ctrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\product ctrl.aspx.designer.cs">
+      <DependentUpon>product ctrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="board.aspx.cs">
+      <DependentUpon>board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="board.aspx.designer.cs">
+      <DependentUpon>board.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mamberdata.aspx.cs">
+      <DependentUpon>mamberdata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mamberdata.aspx.designer.cs">
+      <DependentUpon>mamberdata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pay\finish.aspx.cs">
+      <DependentUpon>finish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\finish.aspx.designer.cs">
+      <DependentUpon>finish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pay\paypage.aspx.cs">
+      <DependentUpon>paypage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\paypage.aspx.designer.cs">
+      <DependentUpon>paypage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\kid.aspx.cs">
+      <DependentUpon>kid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\kid.aspx.designer.cs">
+      <DependentUpon>kid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\man.aspx.cs">
+      <DependentUpon>man.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\man.aspx.designer.cs">
+      <DependentUpon>man.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\productSHOW.aspx.cs">
+      <DependentUpon>productSHOW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\productSHOW.aspx.designer.cs">
+      <DependentUpon>productSHOW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\shoppage.aspx.cs">
+      <DependentUpon>shoppage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\shoppage.aspx.designer.cs">
+      <DependentUpon>shoppage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\woman.aspx.cs">
+      <DependentUpon>woman.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\woman.aspx.designer.cs">
+      <DependentUpon>woman.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="homepage.aspx.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homepage.aspx.designer.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="singin.aspx.cs">
+      <DependentUpon>singin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="singin.aspx.designer.cs">
+      <DependentUpon>singin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="createID.aspx.cs">
+      <DependentUpon>createID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="createID.aspx.designer.cs">
+      <DependentUpon>createID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tool\upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tool\upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VIPhomepage.aspx.cs">
+      <DependentUpon>VIPhomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VIPhomepage.aspx.designer.cs">
+      <DependentUpon>VIPhomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="create suscc.aspx.cs">
+      <DependentUpon>create suscc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="create suscc.aspx.designer.cs">
+      <DependentUpon>create suscc.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53461</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44369/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
