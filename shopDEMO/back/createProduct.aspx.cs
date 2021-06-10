@@ -37,8 +37,10 @@ namespace shopDEMO.back
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Persist Security Info=True;User ID=TonyDu;Password=a5832463";
+            string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+            SqlConnection conn = new SqlConnection(s_data);
+            //SqlConnection conn = new SqlConnection();
+            //conn.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Persist Security Info=True;User ID=TonyDu;Password=a5832463";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand("insert into product(id,model,size,color,qty,price,image)values(@id,@model,@size,@color,@qty,@price,@image)", conn);

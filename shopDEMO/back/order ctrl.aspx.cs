@@ -50,7 +50,10 @@ namespace shopDEMO.back
         {
             string id = GridView1.Rows[e.NewSelectedIndex].Cells[0].Text; //取得點擊行ID
 
-            SqlConnection conn = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = member; Persist Security Info = True; User ID = TonyDU; Password = a5832463");
+            string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+            SqlConnection conn = new SqlConnection(s_data);
+            //本機用
+            //SqlConnection conn = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = member; Persist Security Info = True; User ID = TonyDU; Password = a5832463");
             SqlDataAdapter cmd = new SqlDataAdapter($"select * from orderin where orderid={id}", conn);
 
             DataSet ds = new DataSet();

@@ -34,8 +34,11 @@ namespace shopDEMO.product
                     if (Session["buyitem"] == null)
                     {
                         dr = dt.NewRow();
-                        string mycon = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True";
-                        SqlConnection conn = new SqlConnection(mycon);
+                        string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+                        SqlConnection conn = new SqlConnection(s_data);
+                        //本機再用的
+                        //string mycon = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True";
+                        //SqlConnection conn = new SqlConnection(mycon);
                         string query = "select * from product where id=" + Request.QueryString["id"];
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandText = query;
@@ -71,8 +74,11 @@ namespace shopDEMO.product
                         sr = dt.Rows.Count;
 
                         dr = dt.NewRow();
-                        string mycon = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True";
-                        SqlConnection conn = new SqlConnection(mycon);
+                        string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+                        SqlConnection conn = new SqlConnection(s_data);
+                        //本機再用的
+                        //string mycon = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True";
+                        //SqlConnection conn = new SqlConnection(mycon);
                         string query = "select * from product where id=" + Request.QueryString["id"];
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandText = query;

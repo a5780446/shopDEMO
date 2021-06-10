@@ -65,9 +65,10 @@ namespace shopDEMO.back
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string id = GridView1.DataKeys[e.RowIndex].Values[0].ToString(); //取得點擊行ID
-           
-            SqlConnection conn = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = member; Persist Security Info = True; User ID = TonyDU; Password = a5832463");
 
+            //SqlConnection conn = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = member; Persist Security Info = True; User ID = TonyDU; Password = a5832463");
+            string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+            SqlConnection conn = new SqlConnection(s_data);
             SqlCommand cmd = new SqlCommand($"delete from product where (id = {id}) ", conn);
             conn.Open();
             cmd.ExecuteNonQuery();

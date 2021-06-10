@@ -19,8 +19,10 @@ namespace shopDEMO
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Persist Security Info=True;User ID=TonyDu;Password=a5832463";
+            //SqlConnection conn = new SqlConnection();
+            //conn.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Persist Security Info=True;User ID=TonyDu;Password=a5832463";
+            string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+            SqlConnection conn = new SqlConnection(s_data);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand("insert into VIPmember(id,pswd,ckpswd,name,tel,address,gender)values(@id,@pswd,@ckpswd,@name,@tel,@address,@gender)", conn);
