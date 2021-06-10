@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -83,6 +84,7 @@
     <Content Include="back\customs ctrl.aspx" />
     <Content Include="back\order ctrl.aspx" />
     <Content Include="back\product ctrl.aspx" />
+    <Content Include="back\table.aspx" />
     <Content Include="board.aspx" />
     <Content Include="mamberdata.aspx" />
     <Content Include="pay\finish.aspx" />
@@ -160,6 +162,13 @@
     </Compile>
     <Compile Include="back\product ctrl.aspx.designer.cs">
       <DependentUpon>product ctrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="back\table.aspx.cs">
+      <DependentUpon>table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="back\table.aspx.designer.cs">
+      <DependentUpon>table.aspx</DependentUpon>
     </Compile>
     <Compile Include="board.aspx.cs">
       <DependentUpon>board.aspx</DependentUpon>

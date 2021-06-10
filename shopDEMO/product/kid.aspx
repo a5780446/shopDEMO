@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-<<style type="text/css">
+    <style type="text/css">
         .auto-style1 {
             width: 100%;
             height: 619px;
@@ -32,9 +32,7 @@
             color: #FF99CC;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+&nbsp;</head><body><form id="form1" runat="server">
         <asp:Panel ID="Panel1" runat="server">
             <table class="auto-style1">
                 <tr>
