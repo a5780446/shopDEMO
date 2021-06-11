@@ -187,7 +187,16 @@ namespace shopDEMO.pay
                 s.Close();
             }
             update();
-            Response.Redirect("finish.aspx");
+            if(DropDownList1.SelectedValue== "信用卡付款")
+            {
+                Response.Redirect("https://www.ecpay.com.tw/");
+            }
+            else
+            {
+                Response.Redirect("finish.aspx");
+            }
+
+            
         }
         
     }

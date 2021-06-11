@@ -46,6 +46,10 @@
         }
         .auto-style17 {
             height: 23px;
+            width: 298px;
+        }
+        .auto-style18 {
+            width: 298px;
         }
     </style>
 </head>
@@ -65,6 +69,7 @@
                             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
                             <br />
                             <br />
+                            清單數量 :
                             <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                             <br />
                             <br />
@@ -106,13 +111,13 @@
                                 </tr>
                                 <tr>
                                     <td class="auto-style15">手機末三碼:</td>
-                                    <td>
+                                    <td class="auto-style18">
                                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style15">付款方式:</td>
-                                    <td>
+                                    <td class="auto-style18">
                                         <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="146px">
                                             <asp:ListItem>貨到付款</asp:ListItem>
                                             <asp:ListItem>現金付款</asp:ListItem>
@@ -121,8 +126,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style15">備註:</td>
-                                    <td>
+                                    <td class="auto-style15">收件地址:</td>
+                                    <td class="auto-style18">
                                         <asp:TextBox ID="TextBox3" runat="server" Height="93px" Width="205px"></asp:TextBox>
                                     </td>
                                 </tr>
