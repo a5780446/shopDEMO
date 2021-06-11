@@ -59,7 +59,7 @@
                                 &nbsp;
                                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
                                 &nbsp;&nbsp;
-                                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                                <asp:Label ID="Label2" runat="server"></asp:Label>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Button ID="Button3" runat="server" Height="24px" OnClick="Button3_Click" Text="返回" Width="61px" />
                                 <br />

@@ -52,7 +52,7 @@
 &nbsp;&nbsp;
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="查詢" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="Button4" runat="server" Height="29px" OnClick="Button4_Click" Text="回上頁" Width="75px" />
                         <br />

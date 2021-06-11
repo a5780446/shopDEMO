@@ -28,7 +28,8 @@ namespace shopDEMO.back
             GridView1.DataSource = dt;
             GridView1.DataBind();
 
-            
+
+
             //---linq 部分顯示---
             //EnumerableRowCollection<DataRow> product = dt.AsEnumerable();
 
@@ -38,10 +39,12 @@ namespace shopDEMO.back
 
             //var result = from n in product where n.Field<string>("id") == "10028" select n;
 
-            
+
 
             /*GridView1.DataSource = result.AsDataView();
             GridView1.DataBind(); */
+
+            
 
 
         }

@@ -33,7 +33,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/back/board ctrl.aspx">顧客意見</asp:HyperLink>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:HyperLink ID="HyperLink5" runat="server">HyperLink</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/back/table.aspx">營銷統計表</asp:HyperLink>
             </asp:Panel>
         </div>
     </form>
