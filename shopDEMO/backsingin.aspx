@@ -44,7 +44,7 @@
                             管理員帳號 :<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                             <br />
                             <br />
-                            管理員密碼:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            管理員密碼:<asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
                             <br />
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

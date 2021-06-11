@@ -70,7 +70,7 @@
                                 <br />
                                 <br />
                                 &nbsp;密碼:&nbsp;
-                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
                                 &nbsp;
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="密碼不能為空" ForeColor="Red"></asp:RequiredFieldValidator>
                                 <br />
