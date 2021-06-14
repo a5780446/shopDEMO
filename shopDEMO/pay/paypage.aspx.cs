@@ -13,20 +13,40 @@ namespace shopDEMO.pay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["logined"] != null)
+            {
+                Button100.Visible = true;
+                Button101.Visible = true;
+                Button99.Visible = true;
+                Label99.Text = Session["user"].ToString();
+                HyperLink1.Visible = false;
+                HyperLink2.Visible = false;
+            }
+            else
+            {
+                Button100.Visible = false;
+                Button101.Visible = false;
+                Button99.Visible = false;
+                Label99.Text = "Hi~訪客";
+                HyperLink1.Visible = true;
+                HyperLink2.Visible = true;
+            }
+
             //int orderid;
             Random x = new Random();
             //orderid = x.Next(0001, 1000);
             //Label1.Text = orderid.ToString();
 
-            string orderid="";
+            string orderid = "";
             string y;
             y = DateTime.Now.ToShortDateString();
             string[] z = y.Split('/');
-            foreach(var item in z)
+            foreach (var item in z)
             {
                 orderid += item;
             }
-            
+
             orderid += x.Next(0001, 1000).ToString();
             Label1.Text = orderid.ToString();
 
@@ -41,6 +61,7 @@ namespace shopDEMO.pay
                 dt.Columns.Add("id");
                 dt.Columns.Add("model");
                 dt.Columns.Add("size");
+                dt.Columns.Add("qty");
                 dt.Columns.Add("price");
                 //dt.Columns.Add("cost");
                 //dt.Columns.Add("total");
@@ -67,8 +88,12 @@ namespace shopDEMO.pay
                         dr["id"] = ds.Tables[0].Rows[0]["id"].ToString();
                         dr["model"] = ds.Tables[0].Rows[0]["model"].ToString();
                         dr["size"] = Request.QueryString["size"];
+                        dr["qty"] = Request.QueryString["qty"];
                         dr["price"] = ds.Tables[0].Rows[0]["price"]; //int
-                        //int price = Convert.ToInt32(ds.Tables[0].Rows[0]["price"].ToString());
+                        int quantity = Convert.ToInt32(Request.QueryString["qty"].ToString());
+                        int price = Convert.ToInt32(ds.Tables[0].Rows[0]["price"]);
+                        int total = price * quantity;
+                        dr["total"] = total;
                         dt.Rows.Add(dr);
                         GridView1.DataSource = dt;
                         GridView1.DataBind();
@@ -77,7 +102,7 @@ namespace shopDEMO.pay
                         //-------------------------//
                         Session["buyitem"] = dt;
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
-                        GridView1.FooterRow.Cells[3].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
                         Response.Redirect("cart.aspx");
                     }
                     else
@@ -104,7 +129,12 @@ namespace shopDEMO.pay
                         dr["id"] = ds.Tables[0].Rows[0]["id"].ToString();
                         dr["model"] = ds.Tables[0].Rows[0]["model"].ToString();
                         dr["size"] = Request.QueryString["size"];
+                        dr["qty"] = Request.QueryString["qty"];
                         dr["price"] = ds.Tables[0].Rows[0]["price"]; //int
+                        int quantity = Convert.ToInt32(Request.QueryString["qty"].ToString());
+                        int price = Convert.ToInt32(ds.Tables[0].Rows[0]["price"]);
+                        int total = price * quantity;
+                        dr["total"] = total;
                         dt.Rows.Add(dr);
                         GridView1.DataSource = dt;
                         GridView1.DataBind();
@@ -113,7 +143,7 @@ namespace shopDEMO.pay
 
                         //----------//
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
-                        GridView1.FooterRow.Cells[3].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
                         Response.Redirect("cart.aspx");
 
 
@@ -129,7 +159,7 @@ namespace shopDEMO.pay
                     if (GridView1.Rows.Count > 0)
                     {
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
-                        GridView1.FooterRow.Cells[3].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
                     }
                 }
 
@@ -145,7 +175,7 @@ namespace shopDEMO.pay
             int pay = 0;
             while (i < nrow)
             {
-                pay += Convert.ToInt32(dt.Rows[i]["price"].ToString());
+                pay += Convert.ToInt32(dt.Rows[i]["total"].ToString());
                 i += 1;
             }
             return pay;
@@ -157,7 +187,7 @@ namespace shopDEMO.pay
             string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
             SqlConnection conn = new SqlConnection(s_data);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into orderout(id,name,tel,take,tips) values('" + Label1.Text + "',N'" + TextBox1.Text + "','"+TextBox2.Text+"',N'"+DropDownList1.SelectedValue+"',N'"+TextBox3.Text+"')",conn);
+            SqlCommand cmd = new SqlCommand("insert into orderout(id,name,tel,take,tips,status) values('" + Label1.Text + "',N'" + TextBox1.Text + "','" + TextBox2.Text + "',N'" + DropDownList1.SelectedValue + "',N'" + TextBox3.Text + "',N'新訂單')", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -167,14 +197,14 @@ namespace shopDEMO.pay
 
         protected void Button1_Click(object sender, EventArgs e) //訂單詳細
         {
-            
-             DataTable dt;
-             dt = (DataTable)Session["buyitem"];
-            
-            
-            for(int i = 0; i <= dt.Rows.Count-1 ; i++)
+
+            DataTable dt;
+            dt = (DataTable)Session["buyitem"];
+
+
+            for (int i = 0; i <= dt.Rows.Count - 1; i++)
             {
-                string insertcmd = "insert into orderin(orderid,id,model,size,price) values('" + Label1.Text + "','" + dt.Rows[i]["id"] + "',N'" + dt.Rows[i]["model"] + "','"+dt.Rows[i]["size"]+"'," + dt.Rows[i]["price"] + ")";
+                string insertcmd = "insert into orderin(orderid,id,model,size,price) values('" + Label1.Text + "','" + dt.Rows[i]["id"] + "',N'" + dt.Rows[i]["model"] + "','" + dt.Rows[i]["size"] + "'," + dt.Rows[i]["price"] + ")";
                 //string myconn = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True";
                 string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
                 //SqlConnection conn = new SqlConnection(s_data);
@@ -187,7 +217,7 @@ namespace shopDEMO.pay
                 s.Close();
             }
             update();
-            if(DropDownList1.SelectedValue== "信用卡付款")
+            if (DropDownList1.SelectedValue == "信用卡付款")
             {
                 Response.Redirect("https://www.ecpay.com.tw/");
             }
@@ -195,10 +225,13 @@ namespace shopDEMO.pay
             {
                 Response.Redirect("finish.aspx");
             }
-
-            
         }
-        
-    }
 
+        protected void Button101_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("~/homepage.aspx");
+        }
+    }
 }
+

@@ -16,8 +16,8 @@ namespace shopDEMO
                 Response.Redirect("singin.aspx");
             }
             
-             Label1.Text = "歡迎回來~" + Session["user"]+Session["logined"];
-            Label2.Text = Session["ID"].ToString();
+             Label1.Text = "歡迎回來~" + Session["user"];
+            
             
 
             

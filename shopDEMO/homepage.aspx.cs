@@ -7,18 +7,18 @@ using System.Web.UI.WebControls;
 
 namespace shopDEMO
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class homepage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["logined"] == null)
             {
-                Label1.Text = "0";
+                Label1.Text = "Hi~訪客";
             }
             else
             {
                 Label1.Text = Session["logined"].ToString();
-                Response.Redirect("VIPhomepage.aspx");
+                Server.Transfer("VIPhomepage.aspx");
             }
             
         }

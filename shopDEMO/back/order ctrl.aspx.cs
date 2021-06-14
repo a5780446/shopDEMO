@@ -80,6 +80,18 @@ namespace shopDEMO.back
             Response.Redirect("backhomepage.aspx");
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("~/homepage.aspx");
+        }
+
+       
+
+
+
+
+
 
 
 

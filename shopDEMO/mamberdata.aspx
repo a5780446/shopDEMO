@@ -26,7 +26,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
+            <table class="auto-style1" style="background-color: #FFCC66; border-color: #FFCC66">
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style2"></td>
@@ -66,7 +66,7 @@
                         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="667px" Width="712px">
                             <AlternatingRowStyle BackColor="White" />
                             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
-                            <EditRowStyle BackColor="#7C6F57" />
+                            <EditRowStyle BackColor="#CC99FF" />
                             <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" />
                             <Fields>
                                 <asp:BoundField DataField="id" HeaderText="帳號" ReadOnly="True" SortExpression="id">
@@ -75,6 +75,9 @@
                                 </asp:BoundField>
                                 <asp:BoundField DataField="pswd" HeaderText="密碼" SortExpression="pswd">
                                 <HeaderStyle HorizontalAlign="Center" />
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="ckpswd" HeaderText="確認密碼">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="name" HeaderText="姓名" SortExpression="name">
@@ -101,7 +104,7 @@
                             <RowStyle BackColor="#E3EAEB" />
                         </asp:DetailsView>
                         <br />
-                        <asp:Button ID="Button1" runat="server" Height="42px" OnClick="Button1_Click" Text="返回" Width="114px" />
+                        <asp:Button ID="Button1" runat="server" Height="42px" OnClick="Button1_Click" Text="返回" Width="114px" BackColor="#99CC00" />
                         <br />
                     </td>
                     <td>&nbsp;</td>

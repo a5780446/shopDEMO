@@ -22,6 +22,25 @@ namespace shopDEMO.product
 
 
             //Label2.Text = Session["logined"].ToString();
+            if (Session["logined"] != null)
+            {
+                Button100.Visible = true;
+                Button101.Visible = true;
+                Button99.Visible = true;
+                Label99.Text = Session["user"].ToString();
+                HyperLink1.Visible = false;
+                HyperLink2.Visible = false;
+            }
+            else
+            {
+                Button100.Visible = false;
+                Button101.Visible = false;
+                Button99.Visible = false;
+                Label99.Text = "Hi~訪客";
+                HyperLink1.Visible = true;
+                HyperLink2.Visible = true;
+            }
+
         }
 
         protected void DataList2_ItemCommand(object source, DataListCommandEventArgs e)
@@ -38,33 +57,10 @@ namespace shopDEMO.product
             } //點選 [加入購物車] 跳轉到購物車頁面*/
         }
 
-        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        protected void Button101_Click(object sender, EventArgs e)
         {
-            
-            switch (Menu1.SelectedItem.Text)
-            {
-                case "男生上著":
-                    SqlDataSource1.SelectCommand = "select * from product where id like '1___8'";
-                    break;
-                case "男生下著":
-                    SqlDataSource1.SelectCommand = "select * from product where id like '1___9'";
-                    break;
-                case "女生上著":
-                    SqlDataSource1.SelectCommand = "select * from product where id like '2___8'";
-                    break;
-                case "女生下著":
-                    SqlDataSource1.SelectCommand = "select * from product where id like '2___9'";
-                    break;
-                case "孩童上著":
-                    SqlDataSource1.SelectCommand = "select * from product where id like '3___8'";
-                    break;
-                case "孩童下著":
-                    SqlDataSource1.SelectCommand = "select * from product where id like '3___9'";
-                    break;
-
-
-
-            }
+            Session.RemoveAll();
+            Response.Redirect("~/homepage.aspx");
         }
     }
 }

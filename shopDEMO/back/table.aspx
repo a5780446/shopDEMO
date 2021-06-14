@@ -33,7 +33,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
+            <table class="auto-style1" style="background-color: #FFCC00; border-color: #FFCC00">
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style5"></td>
@@ -42,10 +42,10 @@
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style6">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" SelectCommand="select model,count(*) as xount from orderin group by model"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" SelectCommand="select model,sum(qty)as x from orderin group by model"></asp:SqlDataSource>
                         <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Height="450px" Width="750px">
                             <Series>
-                                <asp:Series Name="Series1" XValueMember="model" YValueMembers="xount">
+                                <asp:Series Name="Series1" XValueMember="model" YValueMembers="x">
                                 </asp:Series>
                             </Series>
                             <ChartAreas>
@@ -57,25 +57,26 @@
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="125px" Width="710px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="model" HeaderText="商品" SortExpression="model">
+                                <asp:BoundField DataField="model" HeaderText="商品名稱" SortExpression="model">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="xount" HeaderText="數量" ReadOnly="True" SortExpression="xount">
+                                <asp:BoundField DataField="x" HeaderText="銷售數量" ReadOnly="True" SortExpression="x">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
                             </Columns>
-                            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-                            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-                            <SortedAscendingCellStyle BackColor="#FDF5AC" />
-                            <SortedAscendingHeaderStyle BackColor="#4D0000" />
-                            <SortedDescendingCellStyle BackColor="#FCF6C0" />
-                            <SortedDescendingHeaderStyle BackColor="#820000" />
+                            <EditRowStyle BackColor="#7C6F57" />
+                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#E3EAEB" />
+                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                            <SortedAscendingHeaderStyle BackColor="#246B61" />
+                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                            <SortedDescendingHeaderStyle BackColor="#15524A" />
                         </asp:GridView>
                         <br />
-                        <asp:Button ID="Button1" runat="server" Height="38px" OnClick="Button1_Click" Text="返回" Width="88px" />
+                        <asp:Button ID="Button1" runat="server" Height="38px" OnClick="Button1_Click" Text="返回" Width="88px" BackColor="#66FF33" />
                         <br />
                     </td>
                     <td>&nbsp;</td>

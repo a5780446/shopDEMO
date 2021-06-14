@@ -9,12 +9,31 @@ using System.Web.UI.WebControls;
 
 namespace shopDEMO
 {
-    public partial class baord : System.Web.UI.Page
+    public partial class board : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Panel3.Visible = false;
             DetailsView1.Visible = false;
+
+            if (Session["logined"] != null)
+            {
+                Button100.Visible = true;
+                Button101.Visible = true;
+                Button99.Visible = true;
+                Label99.Text = Session["user"].ToString();
+                HyperLink1.Visible = false;
+                HyperLink2.Visible = false;
+            }
+            else
+            {
+                Button100.Visible = false;
+                Button101.Visible = false;
+                Button99.Visible = false;
+                Label99.Text = "Hi~訪客";
+                HyperLink1.Visible = true;
+                HyperLink2.Visible = true;
+            }
             
         }
 
@@ -84,6 +103,12 @@ namespace shopDEMO
         protected void Button4_Click(object sender, EventArgs e)
         {
             Response.Redirect("homepage.aspx");
+        }
+
+        protected void Button101_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("~/homepage.aspx");
         }
     }
 }

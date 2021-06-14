@@ -1,53 +1,57 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="board.aspx.cs" Inherits="shopDEMO.baord" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="board.aspx.cs" Inherits="shopDEMO.board" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            height: 934px;
-        }
-        .auto-style2 {
-            height: 131px;
-        }
-        .auto-style3 {
-            height: 131px;
-            width: 170px;
-        }
-        .auto-style4 {
-            width: 170px;
-        }
-        .auto-style5 {
-            height: 131px;
-            width: 888px;
-        }
-        .auto-style6 {
-            width: 888px;
-        }
-    </style>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>About - tshirtwebsitetemplate</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
 </head>
+
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style5"></td>
-                    <td class="auto-style2"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style6">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="我要留言" />
-                        &nbsp;<asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="回上頁" />
+	<form id="form1" runat="server">
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<span id="connect">
+					<a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook"></a>
+					<asp:Label ID="Label99" runat="server"></asp:Label>
+&nbsp;
+                <asp:Button ID="Button101" runat="server" BackColor="#FFCC00" OnClick="Button101_Click" Text="登出" />
+				</span>
+				<span id="infos" class="auto-style1"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/singin.aspx">登入會員</asp:HyperLink>
+                <asp:Button ID="Button99" runat="server" BackColor="#FFCC00" CommandArgument='<%#Eval("id")%>' CommandName="jump" Enabled="False" Text="會員資料" />
+                |
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/product/cart.aspx">購物車</asp:HyperLink>
+				<asp:Button ID="Button100" runat="server" BackColor="#FFCC00" PostBackUrl="~/product/cart.aspx" Text="購物車" />
+				</span>
+				<a href="index.html" id="logo"></a> <!-- /#logo -->
+				<ul id="navigation">
+					<li class="selected">
+                        <asp:Button ID="Button6" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/homepage.aspx" Text="首頁" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button7" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/product/shoppage.aspx" Text="商品" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button8" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button4" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button5" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/board.aspx" Text="留言板" Width="105px" />
+                    </li>
+				</ul>
+			</div> <!-- /#header -->
+			<div id="contents">
+				<div id="main">
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="我要留言" BackColor="#CC9900" Height="26px" Width="82px" />
+                        &nbsp;<br />
                         <br />
-                        <br />
-                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical" Height="241px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="749px">
-                            <AlternatingRowStyle BackColor="White" />
+                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Height="241px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="803px">
+                            <AlternatingRowStyle BackColor="PaleGoldenrod" />
                             <Columns>
                                 <asp:BoundField DataField="name" HeaderText="留言者" SortExpression="name">
                                 <HeaderStyle Height="40px" />
@@ -65,17 +69,15 @@
                                 <ItemStyle HorizontalAlign="Center" Width="40px" />
                                 </asp:CommandField>
                             </Columns>
-                            <FooterStyle BackColor="#CCCC99" />
-                            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                            <RowStyle BackColor="#F7F7DE" />
-                            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                            <SortedAscendingHeaderStyle BackColor="#848384" />
-                            <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                            <SortedDescendingHeaderStyle BackColor="#575357" />
+                            <FooterStyle BackColor="Tan" />
+                            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
                         </asp:GridView>
-                        <br />
                         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="341px" OnItemCommand="DetailsView1_ItemCommand" Width="762px">
                             <AlternatingRowStyle BackColor="White" />
                             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
@@ -119,9 +121,6 @@
                                 <asp:Parameter Name="id" Type="String" />
                             </UpdateParameters>
                         </asp:SqlDataSource>
-                        <br />
-                        <br />
-                        <br />
                         <asp:Panel ID="Panel3" runat="server" Height="339px">
                             <br />
                             <br />
@@ -141,23 +140,41 @@
                             <asp:Button ID="Button2" runat="server" Height="27px" OnClick="Button2_Click" Text="提交" Width="75px" />
                             &nbsp;&nbsp;&nbsp;
                             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="返回" />
+                            <br />
                         </asp:Panel>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
-        </div>
+				</div>
+				<div id="featured">
+					<ul>
+						<li><img src="images/shirt-red.jpg" alt="shirt" /></li>
+						<li><img src="images/shirt-orange.jpg" alt="shirt" /></li>
+						<li><img src="images/shirt-green.jpg" alt="shirt" /></li>
+						<li class="last"><img src="images/shirt-blue.jpg" alt="shirt" /></li>
+					</ul>
+					<a href="product/shoppage.aspx" class="button">shop here!</a> 
+				</div>
+			</div> <!-- /#contents -->
+			<div id="footer">
+				<div id="description">
+					<div>
+						<a href="index.html" class="logo"></a>
+						<span>&copy; Copyright &copy; 2011. <a href="index.html">Company name</a> All rights reserved</span>
+					</div>
+					<p>
+						This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text.
+						You can remove any link to our website from this website template, you're free to use this website template without linking back to us.
+						If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forum/">Forum</a>.
+					</p>
+				</div>
+				<div class="navigation">
+					<a href="index.html">Home</a>|
+					<a href="about.html">About</a>|
+					<a href="blog.html">Blog</a>|
+					<a href="shop.html">Shop</a>|
+					<a href="contact-us.html">Contact Us</a>
+				</div>
+			</div> <!-- /#footer -->
+		</div> <!-- /#page -->
+	</div> <!-- /#background -->
     </form>
 </body>
 </html>

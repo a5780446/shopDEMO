@@ -12,9 +12,17 @@ namespace shopDEMO.pay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = Session["user"] + "  交易完成 , 感謝您的購買!".ToString();
+            if(Session["logined"] !=null)
+            {
+                Label1.Text = Session["user"] + "  交易完成 , 感謝您的購買!".ToString();
+                Label2.Text = Session["order"].ToString();
+            }
+            else
+            {
+                Label1.Text =  "交易完成 , 感謝您的購買!";
+                Label2.Text = Session["order"].ToString();
+            }
             
-            Label2.Text = Session["order"].ToString();
 
            
         }

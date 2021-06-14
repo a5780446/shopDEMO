@@ -1,70 +1,50 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paypage.aspx.cs" Inherits="shopDEMO.pay.paypage" %>
-
 <!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Sellcouth</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+    </head>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            height: 1053px;
-        }
-        .auto-style2 {
-            height: 93px;
-        }
-        .auto-style3 {
-            height: 603px;
-        }
-        .auto-style4 {
-            height: 93px;
-            width: 78px;
-        }
-        .auto-style5 {
-            height: 603px;
-            width: 78px;
-        }
-        .auto-style6 {
-            height: 93px;
-            width: 1100px;
-        }
-        .auto-style7 {
-            height: 603px;
-            width: 1100px;
-        }
-        .auto-style13 {
-            width: 37%;
-            height: 246px;
-        }
-        .auto-style15 {
-            width: 99px;
-        }
-        .auto-style16 {
-            width: 99px;
-            height: 23px;
-        }
-        .auto-style17 {
-            height: 23px;
-            width: 298px;
-        }
-        .auto-style18 {
-            width: 298px;
-        }
-    </style>
-</head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style2"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style5"></td>
-                    <td class="auto-style7">
+	<form id="form1" runat="server">
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<span id="connect">
+					<a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook"></a>
+					<asp:Label ID="Label99" runat="server"></asp:Label>
+&nbsp;
+                <asp:Button ID="Button101" runat="server" BackColor="#FFCC00" OnClick="Button101_Click" Text="登出" Width="40px" />
+				</span>
+				<span id="infos" class="auto-style1"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/singin.aspx">登入會員</asp:HyperLink>
+                <asp:Button ID="Button99" runat="server" BackColor="#FFCC00" CommandArgument='<%#Eval("id")%>' CommandName="jump" Enabled="False" Text="會員資料" />
+                |
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/product/cart.aspx">購物車</asp:HyperLink>
+				<asp:Button ID="Button100" runat="server" BackColor="#FFCC00" PostBackUrl="~/product/cart.aspx" Text="購物車" />
+				</span>
+				<a id="logo"></a> <!-- /#logo -->
+				<ul id="navigation">
+					<li class="selected">
+                        <asp:Button ID="Button6" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/homepage.aspx" Text="首頁" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button7" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/product/shoppage.aspx" Text="商品" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button3" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button8" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                    </li>
+					<li>
+                        <asp:Button ID="Button5" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/board.aspx" Text="留言板" Width="105px" />
+                    </li>
+				</ul>
+			</div> <!-- /#header -->
+			<div id="contents">
                         <asp:Panel ID="Panel1" runat="server" Height="714px">
                             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
                             <br />
@@ -87,7 +67,13 @@
                                     <asp:BoundField DataField="size" HeaderText="商品尺寸">
                                     <ItemStyle HorizontalAlign="Center" />
                                     </asp:BoundField>
+                                    <asp:BoundField DataField="qty" HeaderText="購買數量">
+                                    <ItemStyle HorizontalAlign="Center" />
+                                    </asp:BoundField>
                                     <asp:BoundField DataField="price" HeaderText="價格">
+                                    <ItemStyle HorizontalAlign="Center" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="total" HeaderText="總金額">
                                     <ItemStyle HorizontalAlign="Center" />
                                     </asp:BoundField>
                                 </Columns>
@@ -129,18 +115,38 @@
                                     <td class="auto-style15">收件地址:</td>
                                     <td class="auto-style18">
                                         <asp:TextBox ID="TextBox3" runat="server" Height="93px" Width="205px"></asp:TextBox>
+                                        <br />
                                     </td>
                                 </tr>
                             </table>
                             <br />
                             <br />
-                            <asp:Button ID="Button1" runat="server" Height="54px" OnClick="Button1_Click" Text="送出訂單" Width="173px" />
+                            <asp:Button ID="Button1" runat="server" BackColor="#99FF66" Height="54px" OnClick="Button1_Click" Text="送出訂單" Width="173px" />
+                            <br />
                         </asp:Panel>
-                    </td>
-                    <td class="auto-style3"></td>
-                </tr>
-            </table>
-        </div>
+			</div> <!-- /#contents -->
+			<div id="footer">
+				<div id="description">
+					<div>
+						<a href="index.html" class="logo"></a>
+						<span>&copy; Copyright &copy; 2011. <a href="index.html">Company name</a> All rights reserved</span>
+					</div>
+					<p>
+						This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text.
+						You can remove any link to our website from this website template, you're free to use this website template without linking back to us.
+						If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forum/">Forum</a>.
+					</p>
+				</div>
+				<div class="navigation">
+					<a href="index.html">Home</a>|
+					<a href="about.html">About</a>|
+					<a href="blog.html">Blog</a>|
+					<a href="shop.html">Shop</a>|
+					<a href="contact-us.html">Contact Us</a>
+				</div>
+			</div> <!-- /#footer -->
+		</div> <!-- /#page -->
+	</div> <!-- /#background -->
     </form>
 </body>
 </html>

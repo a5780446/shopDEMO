@@ -16,25 +16,29 @@
         }
         .auto-style3 {
             height: 93px;
-            width: 196px;
+            width: 195px;
         }
         .auto-style4 {
-            width: 196px;
+            width: 195px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="background-color: #FFCC00; border-color: #FFCC00">
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style2"></td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style3" style="border-color: #FFCC00"></td>
+                    <td class="auto-style2" style="border-color: #FFCC00"></td>
+                    <td class="auto-style2" style="border-color: #FFCC00"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>
+                    <td class="auto-style4" style="background-color: #FFCC00">&nbsp;</td>
+                    <td style="background-color: #FFCC00">
+                        <br />
+                        <asp:ImageButton ID="ImageButton1" runat="server" Height="188px" ImageUrl="~/images/bg-header.jpg" PostBackUrl="~/homepage.aspx" Width="526px" />
+                        <br />
+                        <br />
             <asp:Label ID="Label1" runat="server" Text="訂單已完成 , 感謝您的惠顧"></asp:Label>
                         <br />
                         <br />

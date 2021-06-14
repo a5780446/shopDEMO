@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace shopDEMO.back
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class product_ctrl : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,8 +44,8 @@ namespace shopDEMO.back
             /*GridView1.DataSource = result.AsDataView();
             GridView1.DataBind(); */
 
-            
 
+            Button10.Visible = false;
 
         }
 
@@ -86,6 +86,8 @@ namespace shopDEMO.back
             Button1.Visible = false;
             TextBox1.Visible = false;
             Button2.Visible = false;
+            Button10.Visible = true;
+            
 
             GridView2.Visible = true;
             Button3.Visible = true;
@@ -99,6 +101,7 @@ namespace shopDEMO.back
             Button1.Visible = true;
             TextBox1.Visible = true;
             Button2.Visible = true;
+            
 
             GridView2.Visible = false;
             Button3.Visible = false;
@@ -107,6 +110,12 @@ namespace shopDEMO.back
         protected void Button4_Click(object sender, EventArgs e)
         {
             Response.Redirect("backhomepage.aspx");
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("~/homepage.aspx");
         }
 
         /*protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)

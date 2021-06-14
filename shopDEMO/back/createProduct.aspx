@@ -19,10 +19,10 @@
         }
         .auto-style4 {
             height: 84px;
-            width: 231px;
+            width: 177px;
         }
         .auto-style5 {
-            width: 231px;
+            width: 177px;
         }
         .auto-style6 {
             height: 84px;
@@ -38,7 +38,7 @@
 </head>
 <body>
     <form id="form1" runat="server" class="auto-style1">
-        <div>
+        <div style="background-color: #FFCC66; border-color: #FFCC66">
             <table class="auto-style2">
                 <tr>
                     <td class="auto-style4"></td>
@@ -48,7 +48,7 @@
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">
-                        <asp:Panel ID="Panel1" runat="server" Height="520px">
+                        <asp:Panel ID="Panel1" runat="server" Height="745px">
                             <div class="auto-style8">
                                 <br />
                                 <br />
@@ -88,8 +88,9 @@
                                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="上傳" />
                                 <br />
                                 <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="Button1" runat="server" Height="50px" OnClick="Button1_Click" Text="新增" Width="117px" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" BackColor="#FF5050" Height="28px" PostBackUrl="~/back/product ctrl.aspx" Text="放棄" Width="44px" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Button ID="Button1" runat="server" Height="50px" OnClick="Button1_Click" Text="新增" Width="117px" BackColor="#99FF33" />
                             </div>
                         </asp:Panel>
                     </td>
