@@ -32,19 +32,19 @@
                 <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/product/cart.aspx">購物車</asp:HyperLink>
 				<asp:Button ID="Button100" runat="server" BackColor="#FFCC00" Text="購物車" PostBackUrl="~/product/cart.aspx" />
 				</span>
-				<a href="index.html" id="logo"></a> <!-- /#logo -->
+				<a id="logo"></a> <!-- /#logo -->
 				<ul id="navigation">
 					<li class="selected">
-                        <asp:Button ID="Button6" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/homepage.aspx" Text="首頁" Width="105px" />
+                        <asp:Button ID="Button102" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/homepage.aspx" Text="首頁" Width="105px" />
                     </li>
 					<li>
-                        <asp:Button ID="Button7" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/product/shoppage.aspx" Text="商品" Width="105px" />
+                        <asp:Button ID="Button103" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/product/shoppage.aspx" Text="商品" Width="105px" />
                     </li>
 					<li>
-                        <asp:Button ID="Button3" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                        <asp:Button ID="Button3" runat="server" BackColor="#FFCC66" Height="36px" Text="最新消息" Width="105px" PostBackUrl="~/news.aspx" />
                     </li>
 					<li>
-                        <asp:Button ID="Button4" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                        <asp:Button ID="Button4" runat="server" BackColor="#FFCC66" Height="36px" Text="消費者須知" Width="105px" PostBackUrl="~/about.aspx" />
                     </li>
 					<li>
                         <asp:Button ID="Button5" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/board.aspx" Text="留言板" Width="105px" />
@@ -71,6 +71,7 @@
                                     <br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:Button ID="Button1" runat="server" CommandArgument='<%#Eval("id")%>' CommandName="jump" Text="詳細資料" BackColor="#33CC33" Height="33px" Width="83px" />
+                                    <br />
                                 </ItemTemplate>
                                 <SelectedItemStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
                             </asp:DataList>

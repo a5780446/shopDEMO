@@ -51,6 +51,10 @@ namespace shopDEMO
                         }
                         conn.Close();
                     }
+                    else
+                    {
+                        Label1.Text = "查無此帳號!";
+                    }
                 }
                 else
                 {

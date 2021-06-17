@@ -13,6 +13,7 @@ namespace shopDEMO.pay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             if (Session["logined"] != null)
             {
@@ -183,11 +184,21 @@ namespace shopDEMO.pay
 
         public void update() //訂單外觀
         {
+            string userid;
+            if (Session["logined"] != null)
+            {
+                userid = Session["user"].ToString();
+            }
+            else
+            {
+                userid = "guest";
+            }
+               
             //SqlConnection conn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True");
             string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
             SqlConnection conn = new SqlConnection(s_data);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into orderout(id,name,tel,take,tips,status) values('" + Label1.Text + "',N'" + TextBox1.Text + "','" + TextBox2.Text + "',N'" + DropDownList1.SelectedValue + "',N'" + TextBox3.Text + "',N'新訂單')", conn);
+            SqlCommand cmd = new SqlCommand("insert into orderout(id,name,tel,take,tips,status,userID) values('" + Label1.Text + "',N'" + TextBox1.Text + "','" + TextBox2.Text + "',N'" + DropDownList1.SelectedValue + "',N'" + TextBox3.Text + "',N'新訂單',N'"+userid+"')", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -204,7 +215,7 @@ namespace shopDEMO.pay
 
             for (int i = 0; i <= dt.Rows.Count - 1; i++)
             {
-                string insertcmd = "insert into orderin(orderid,id,model,size,price) values('" + Label1.Text + "','" + dt.Rows[i]["id"] + "',N'" + dt.Rows[i]["model"] + "','" + dt.Rows[i]["size"] + "'," + dt.Rows[i]["price"] + ")";
+                string insertcmd = "insert into orderin(orderid,id,model,size,price,qty) values('" + Label1.Text + "','" + dt.Rows[i]["id"] + "',N'" + dt.Rows[i]["model"] + "','" + dt.Rows[i]["size"] + "'," + dt.Rows[i]["price"] + "," + dt.Rows[i]["qty"] + ")";
                 //string myconn = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=member;Integrated Security=True";
                 string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
                 //SqlConnection conn = new SqlConnection(s_data);

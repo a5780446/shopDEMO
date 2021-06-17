@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="shopDEMO.homepage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="shopDEMO.news" %>
 
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
@@ -9,10 +9,8 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
     <style type="text/css">
         .auto-style1 {
-            margin-left: 75;
-        }
-        .auto-style2 {
-            width: 322px;
+            width: 205px;
+            height: 243px;
         }
     </style>
 </head>
@@ -22,12 +20,17 @@
 	<div id="background">
 		<div id="page">
 			<div id="header">
-				<span id="connect" class="auto-style2">
+				<span id="connect">
 					<a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook"></a>
-				<asp:Label ID="Label1" runat="server" ForeColor="#996600"></asp:Label>
-&nbsp;</span><span id="infos" class="auto-style1"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/singin.aspx">登入會員</asp:HyperLink>
+					<asp:Label ID="Label99" runat="server"></asp:Label>
+&nbsp;
+                <asp:Button ID="Button101" runat="server" BackColor="#FFCC00" OnClick="Button101_Click" Text="登出" />
+				</span>
+				<span id="infos" class="auto-style1"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/singin.aspx">登入會員</asp:HyperLink>
+                <asp:Button ID="Button99" runat="server" BackColor="#FFCC00" Text="會員資料" CommandArgument='<%#Eval("id")%>' CommandName="jump" Enabled="False" />
                 |
                 <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/product/cart.aspx">購物車</asp:HyperLink>
+				<asp:Button ID="Button100" runat="server" BackColor="#FFCC00" Text="購物車" PostBackUrl="~/product/cart.aspx" />
 				</span>
 				<a id="logo"></a> <!-- /#logo -->
 				<ul id="navigation">
@@ -49,20 +52,34 @@
 				</ul>
 			</div> <!-- /#header -->
 			<div id="contents">
-				<div id="main">
-					<div id="adbox">
-						<img src="images/sale.jpg" alt="Img" />
+				<div id="blogs">
+					<div>
+						<span><img src="pic/鬼滅之刃Logo.jpg" alt="shirt" /></span>
+						<h3>將於西元2000年與2019日本當紅漫畫&quot;鬼滅之刃&quot;強勢聯名!</h3>
+						<p>
+							&nbsp;說明欄....</p>
+                        <p>
+							&nbsp;</p>
+                        <p>
+							&nbsp;</p>
+						<a  class="more">Read more...</a>
+					</div>
+					<div class="last">
+						<span><img src="pic/Adidas_logo.gif" alt="shirt" class="auto-style1" /></span>
+						<h3>本公司好想與知名品牌&quot;阿迪達&quot;談聯名!</h3>
+						<p>
+							說明欄....
+						</p>
+                        <p>
+							&nbsp;</p>
+                        <p>
+							&nbsp;</p>
+						<a class="more">Read more...</a>
+					</div>
+					<div class="buttons">
+						<a href="blog.html">more..</a> 
 					</div>
 				</div>
-				<div id="featured">
-					<ul>
-						<li><img src="images/shirt-red.jpg" alt="shirt" /></li>
-						<li><img src="images/shirt-orange.jpg" alt="shirt" /></li>
-						<li><img src="images/shirt-green.jpg" alt="shirt" /></li>
-						<li class="last"><img src="images/shirt-blue.jpg" alt="shirt" /></li>
-					</ul>
-					&nbsp;<a href="product/shoppage.aspx" class="button" style="left: 371px; bottom: -18px">shop here!</a>
-					<a href="backsingin.aspx" class="button" style="left: 788px; bottom: -39px">Web Admin</a></div>
 			</div> <!-- /#contents -->
 			<div id="footer">
 				<div id="description">

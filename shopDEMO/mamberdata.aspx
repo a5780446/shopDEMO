@@ -21,6 +21,22 @@
         .auto-style4 {
             width: 240px;
         }
+        .auto-style5 {
+            margin-top: 0px;
+        }
+        .auto-style6 {
+            width: 100%;
+        }
+        .auto-style7 {
+            height: 502px;
+        }
+        .auto-style8 {
+            height: 61px;
+            width: 135px;
+        }
+        .auto-style9 {
+            width: 135px;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +46,7 @@
                 <tr>
                     <td class="auto-style3"></td>
                     <td class="auto-style2"></td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style8"></td>
                 </tr>
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
@@ -63,6 +79,8 @@
                                 <asp:Parameter Name="id" Type="String" />
                             </UpdateParameters>
                         </asp:SqlDataSource>
+                        <br />
+                        <asp:Button ID="Button6" runat="server" BackColor="#CC99FF" CommandName="order" CssClass="auto-style5" Height="42px" OnClick="Button6_Click" Text="查看訂單" Width="114px" />
                         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="667px" Width="712px">
                             <AlternatingRowStyle BackColor="White" />
                             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
@@ -96,18 +114,46 @@
                                 <HeaderStyle HorizontalAlign="Center" />
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:CommandField ShowEditButton="True" />
+                                <asp:CommandField ShowEditButton="True" ButtonType="Button" EditText="修改資料" UpdateText="儲存" />
                             </Fields>
                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                             <RowStyle BackColor="#E3EAEB" />
                         </asp:DetailsView>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Width="719px">
+                            <Columns>
+                                <asp:BoundField DataField="id" HeaderText="ID" />
+                                <asp:BoundField DataField="userID" HeaderText="會員名稱" />
+                                <asp:BoundField DataField="status" HeaderText="訂單進度" />
+                                <asp:BoundField DataField="initdate" HeaderText="訂購日期" />
+                            </Columns>
+                            <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+                            <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+                            <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+                            <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#594B9C" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#33276A" />
+                        </asp:GridView>
                         <br />
                         <asp:Button ID="Button1" runat="server" Height="42px" OnClick="Button1_Click" Text="返回" Width="114px" BackColor="#99CC00" />
+                        &nbsp;&nbsp;
+                        <table class="auto-style6">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style7"></td>
+                                <td class="auto-style7"></td>
+                            </tr>
+                        </table>
                         <br />
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                 </tr>
             </table>
         </div>

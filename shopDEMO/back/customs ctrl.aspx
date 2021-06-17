@@ -29,7 +29,7 @@
             <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" Text="管理員登出" Height="25px" Width="101px" />
 				</span>
 				</span>
-				<a href="index.html" id="logo"></a> <!-- /#logo -->
+				<a id="logo"></a> <!-- /#logo -->
 				<ul id="navigation">
 					<li class="selected">
                         <asp:Button ID="Button6" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/back/customs ctrl.aspx" Text="會員資料管理" Width="105px" />

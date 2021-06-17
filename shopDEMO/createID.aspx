@@ -72,10 +72,15 @@
                 &nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox1" ErrorMessage="格式錯誤" ForeColor="Red" ValidationExpression="[a-zA-Z0-9]{5,10}"></asp:RegularExpressionValidator>
                 <br />
+                　　　　　<asp:Label ID="Label1" runat="server" BackColor="#66FF66"></asp:Label>
+                &nbsp;
+                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="檢查" />
                 <br />
+                　　　　　<br />
                 &nbsp; 建立密碼:&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
                 &nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBox2" ErrorMessage="格式錯誤" ForeColor="Red" ValidationExpression="[a-zA-Z0-9]{5,10}"></asp:RegularExpressionValidator>
+                <br />
                 <br />
                 <br />
                 &nbsp; 確認密碼:&nbsp;
@@ -88,7 +93,7 @@
                 &nbsp; 姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                 &nbsp; (必填)&nbsp;
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="必填項目" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="不能為空" ForeColor="Red" ValidationGroup="xx"></asp:RequiredFieldValidator>
                 <br />
                 <br />
                 &nbsp; 連絡電話:&nbsp;
@@ -96,10 +101,11 @@
                 &nbsp; (必填)&nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBox5" ErrorMessage="行動電話格式錯誤" ForeColor="#FF3300" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
                 &nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox5" ErrorMessage="不能為空" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />
                 &nbsp; 地址:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                &nbsp;
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox6" ErrorMessage="不能為空" ForeColor="Red" ValidationGroup="xx"></asp:RequiredFieldValidator>
                 <br />
                 <br />
                 &nbsp; 性別:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
@@ -108,9 +114,9 @@
                     <asp:ListItem>不透漏</asp:ListItem>
                 </asp:RadioButtonList>
                 &nbsp;<br />
-                <asp:Button ID="Button1" runat="server" BackColor="#99CC00" Height="45px" OnClick="Button1_Click" Text="提交" Width="121px" />
+                <asp:Button ID="Button1" runat="server" BackColor="#99CC00" Height="45px" OnClick="Button1_Click" Text="提交" Width="121px" ValidationGroup="xx" />
                 &nbsp;
-                <asp:Button ID="Button2" runat="server" BackColor="#99FF33" PostBackUrl="~/homepage.aspx" Text="放棄" Width="74px" />
+                <asp:Button ID="Button2" runat="server" BackColor="#99FF33" Text="放棄" Width="74px" OnClick="Button2_Click" />
                 <br />
                 <br />
             </asp:Panel>

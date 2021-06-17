@@ -28,16 +28,16 @@
 				<a id="logo"></a> <!-- /#logo -->
 				<ul id="navigation">
 					<li class="selected">
-                        <asp:Button ID="Button6" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/homepage.aspx" Text="首頁" Width="105px" />
+                        <asp:Button ID="Button102" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/homepage.aspx" Text="首頁" Width="105px" />
                     </li>
 					<li>
-                        <asp:Button ID="Button7" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/product/shoppage.aspx" Text="商品" Width="105px" />
+                        <asp:Button ID="Button2" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/product/shoppage.aspx" Text="商品" Width="105px" />
                     </li>
 					<li>
-                        <asp:Button ID="Button3" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                        <asp:Button ID="Button3" runat="server" BackColor="#FFCC66" Height="36px" Text="最新消息" Width="105px" PostBackUrl="~/news.aspx" />
                     </li>
 					<li>
-                        <asp:Button ID="Button8" runat="server" BackColor="#FFCC66" Height="36px" Text="首頁" Width="105px" />
+                        <asp:Button ID="Button4" runat="server" BackColor="#FFCC66" Height="36px" Text="消費者須知" Width="105px" PostBackUrl="~/about.aspx" />
                     </li>
 					<li>
                         <asp:Button ID="Button5" runat="server" BackColor="#FFCC66" Height="36px" PostBackUrl="~/board.aspx" Text="留言板" Width="105px" />
@@ -93,12 +93,14 @@
                                     <td class="auto-style16">收件人:</td>
                                     <td class="auto-style17">
                                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="必填"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style15">手機末三碼:</td>
                                     <td class="auto-style18">
                                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="必填"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -116,12 +118,14 @@
                                     <td class="auto-style18">
                                         <asp:TextBox ID="TextBox3" runat="server" Height="93px" Width="205px"></asp:TextBox>
                                         <br />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="必填"></asp:RequiredFieldValidator>
+                                        <br />
                                     </td>
                                 </tr>
                             </table>
                             <br />
                             <br />
-                            <asp:Button ID="Button1" runat="server" BackColor="#99FF66" Height="54px" OnClick="Button1_Click" Text="送出訂單" Width="173px" />
+                            <asp:Button ID="Button1" runat="server" BackColor="#99FF66" Height="54px" OnClick="Button1_Click" Text="送出訂單" Width="173px" OnClientClick="javascript:if(!window.confirm('確定送出表單?')) window.event.returnValue = false;" />
                             <br />
                         </asp:Panel>
 			</div> <!-- /#contents -->

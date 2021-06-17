@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv=refresh content="3; url= https://localhost:44369/singin.aspx/">  <title></title><style type="text/css">
+<meta http-equiv=refresh content="3; url= https://shopdemo20210610112515.azurewebsites.net/singin.aspx">  <title></title><style type="text/css">
         .auto-style1 {
             height: 643px;
         }
