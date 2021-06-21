@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>About - tshirtwebsitetemplate</title>
+	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
 </head>
 
@@ -53,20 +53,21 @@
                         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Height="241px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="803px">
                             <AlternatingRowStyle BackColor="PaleGoldenrod" />
                             <Columns>
-                                <asp:BoundField DataField="name" HeaderText="留言者" SortExpression="name">
-                                <HeaderStyle Height="40px" />
-                                <ItemStyle HorizontalAlign="Center" Width="150px" />
+                                <asp:BoundField DataField="name" HeaderText="留言者" SortExpression="name" NullDisplayText="NULL">
+                                <HeaderStyle Height="30px" HorizontalAlign="Center" />
+                                <ItemStyle HorizontalAlign="Center" Width="150px" Height="35px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="head" HeaderText="標題" SortExpression="head">
                                 <ControlStyle Width="200px" />
-                                <ItemStyle HorizontalAlign="Center" Width="250px" />
+                                <ItemStyle HorizontalAlign="Center" Width="250px" Height="30px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="date" HeaderText="日期" SortExpression="date">
                                 <ControlStyle Width="100px" />
-                                <ItemStyle HorizontalAlign="Center" Width="150px" />
+                                <HeaderStyle HorizontalAlign="Center" />
+                                <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:CommandField ShowSelectButton="True">
-                                <ItemStyle HorizontalAlign="Center" Width="40px" />
+                                <asp:CommandField ShowSelectButton="True" SelectText="查看留言">
+                                <ItemStyle HorizontalAlign="Center" Width="65px" />
                                 </asp:CommandField>
                             </Columns>
                             <FooterStyle BackColor="Tan" />
@@ -99,45 +100,38 @@
                             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                             <RowStyle BackColor="#E3EAEB" />
                         </asp:DetailsView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" SelectCommand="SELECT [name], [head], [date] FROM [board]"></asp:SqlDataSource>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" DeleteCommand="DELETE FROM [board] WHERE [id] = @id" InsertCommand="INSERT INTO [board] ([id], [name], [head], [conten], [date], [feedback]) VALUES (@id, @name, @head, @conten, @date, @feedback)" SelectCommand="SELECT * FROM [board]" UpdateCommand="UPDATE [board] SET [name] = @name, [head] = @head, [conten] = @conten, [date] = @date, [feedback] = @feedback WHERE [id] = @id">
-                            <DeleteParameters>
-                                <asp:Parameter Name="id" Type="String" />
-                            </DeleteParameters>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" SelectCommand="SELECT [name], [head], [date] FROM [board] ORDER BY [date] DESC"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" InsertCommand="INSERT INTO [board] ([id], [name], [head], [conten], [date], [feedback]) VALUES (@id, @name, @head, @conten, @date, @feedback)" SelectCommand="SELECT * FROM [board] ORDER BY [date] DESC">
                             <InsertParameters>
                                 <asp:Parameter Name="id" Type="String" />
                                 <asp:Parameter Name="name" Type="String" />
                                 <asp:Parameter Name="head" Type="String" />
                                 <asp:Parameter Name="conten" Type="String" />
                                 <asp:Parameter Name="date" Type="DateTime" />
-                                <asp:Parameter Name="feedback" Type="Object" />
+                                <asp:Parameter Name="feedback" Type="String" />
                             </InsertParameters>
-                            <UpdateParameters>
-                                <asp:Parameter Name="name" Type="String" />
-                                <asp:Parameter Name="head" Type="String" />
-                                <asp:Parameter Name="conten" Type="String" />
-                                <asp:Parameter Name="date" Type="DateTime" />
-                                <asp:Parameter Name="feedback" Type="Object" />
-                                <asp:Parameter Name="id" Type="String" />
-                            </UpdateParameters>
                         </asp:SqlDataSource>
                         <asp:Panel ID="Panel3" runat="server" Height="339px">
                             <br />
                             <br />
-                            標題 :
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                            <br />
-                            <br />
                             留言者 :
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="必填" ForeColor="Red" ValidationGroup="yy"></asp:RequiredFieldValidator>
+                            <br />
+                            <br />
+                            標題 :
                             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="必填" ForeColor="Red" ValidationGroup="yy"></asp:RequiredFieldValidator>
                             <br />
                             <br />
                             留言內容 :<br />
                             <br />
-                            <asp:TextBox ID="TextBox3" runat="server" Height="145px" Width="364px"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" Height="145px" Width="364px" TextMode="MultiLine"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="留下點意見吧~" ForeColor="Red" ValidationGroup="yy"></asp:RequiredFieldValidator>
                             <br />
                             <br />
-                            <asp:Button ID="Button2" runat="server" Height="27px" OnClick="Button2_Click" Text="提交" Width="75px" />
+                            <br />
+                            <asp:Button ID="Button2" runat="server" Height="27px" OnClick="Button2_Click" Text="提交" Width="75px" ValidationGroup="yy" />
                             &nbsp;&nbsp;&nbsp;
                             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="返回" />
                             <br />

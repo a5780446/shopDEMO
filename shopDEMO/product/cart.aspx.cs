@@ -14,6 +14,7 @@ namespace shopDEMO.product
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
 
             if (Session["logined"] != null)
             {
@@ -89,6 +90,7 @@ namespace shopDEMO.product
                         Session["buyitem"] = dt;
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
                         GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[4].Text = totalqty().ToString() + "件商品";
                         Response.Redirect("cart.aspx");
                     }
                     else
@@ -135,6 +137,7 @@ namespace shopDEMO.product
                         //----------//
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
                         GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[4].Text = totalqty().ToString() + "件商品";
                         Response.Redirect("cart.aspx");
 
 
@@ -151,12 +154,15 @@ namespace shopDEMO.product
                     {
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
                         GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[4].Text = totalqty().ToString() + "件商品";
                     }
                 }
             }
         }
 
-        public int paytotal()
+
+
+        public int paytotal() //算總價
         {
             DataTable dt = new DataTable();
             dt = (DataTable)Session["buyitem"];
@@ -171,6 +177,20 @@ namespace shopDEMO.product
             return pay;
         }
 
+        public int totalqty()  //計算數量
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)Session["buyitem"];
+            int nrow = dt.Rows.Count;
+            int i = 0;
+            int x = 0;
+            while (i < nrow)
+            {
+                x += Convert.ToInt32(dt.Rows[i]["qty"].ToString());
+                i += 1;
+            }
+            return x;
+        }
 
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

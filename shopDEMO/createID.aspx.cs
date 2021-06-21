@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace shopDEMO
 {
@@ -30,10 +31,12 @@ namespace shopDEMO
                 if (rd.HasRows)
                 {
                     Label1.Text = "此帳號已被使用";
+                    Label1.BackColor = Color.Red;
                 }
                 else
                 {
                     Label1.Text = "可以使用此帳號!";
+                    Label1.BackColor = Color.LightGreen;
                     Button1.Enabled = true;
                 }
             }

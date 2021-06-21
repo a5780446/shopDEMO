@@ -81,6 +81,8 @@
                         </asp:SqlDataSource>
                         <br />
                         <asp:Button ID="Button6" runat="server" BackColor="#CC99FF" CommandName="order" CssClass="auto-style5" Height="42px" OnClick="Button6_Click" Text="查看訂單" Width="114px" />
+                        <br />
+                        <br />
                         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="667px" Width="712px">
                             <AlternatingRowStyle BackColor="White" />
                             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
@@ -121,12 +123,24 @@
                             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                             <RowStyle BackColor="#E3EAEB" />
                         </asp:DetailsView>
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Width="719px">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Width="719px" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                             <Columns>
                                 <asp:BoundField DataField="id" HeaderText="ID" />
-                                <asp:BoundField DataField="userID" HeaderText="會員名稱" />
-                                <asp:BoundField DataField="status" HeaderText="訂單進度" />
-                                <asp:BoundField DataField="initdate" HeaderText="訂購日期" />
+                                <asp:BoundField DataField="userID" HeaderText="會員名稱" >
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="status" HeaderText="訂單進度" >
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="initdate" HeaderText="訂購日期" >
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:TemplateField ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select" Text="選取"></asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle HorizontalAlign="Center" />
+                                </asp:TemplateField>
                             </Columns>
                             <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                             <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -138,6 +152,38 @@
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
                             <SortedDescendingHeaderStyle BackColor="#33276A" />
                         </asp:GridView>
+                        <br />
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="174px" Width="753px">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:BoundField DataField="orderid" HeaderText="訂單編號">
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="id" HeaderText="商品編號">
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="model" HeaderText="商品名稱">
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="size" HeaderText="尺寸">
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="qty" HeaderText="商品數量">
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:BoundField>
+                            </Columns>
+                            <EditRowStyle BackColor="#7C6F57" />
+                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#E3EAEB" />
+                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                            <SortedAscendingHeaderStyle BackColor="#246B61" />
+                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                            <SortedDescendingHeaderStyle BackColor="#15524A" />
+                        </asp:GridView>
+                        <br />
                         <br />
                         <asp:Button ID="Button1" runat="server" Height="42px" OnClick="Button1_Click" Text="返回" Width="114px" BackColor="#99CC00" />
                         &nbsp;&nbsp;

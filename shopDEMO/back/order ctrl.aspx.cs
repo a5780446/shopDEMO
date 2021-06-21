@@ -17,7 +17,7 @@ namespace shopDEMO.back
             //---LinQ ---
             ConnectionStringSettings conn = ConfigurationManager.ConnectionStrings["memberConnectionString1"];
 
-            SqlDataAdapter cmd = new SqlDataAdapter("select * from orderout", conn.ConnectionString);
+            SqlDataAdapter cmd = new SqlDataAdapter("select * from orderout order by initdate desc", conn.ConnectionString);
 
             DataSet ds = new DataSet();
             cmd.Fill(ds, "orderout");
@@ -86,7 +86,23 @@ namespace shopDEMO.back
             Response.Redirect("~/homepage.aspx");
         }
 
-       
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -16,11 +16,13 @@ namespace shopDEMO.pay
             {
                 Label1.Text = Session["user"] + "  交易完成 , 感謝您的購買!".ToString();
                 Label2.Text = Session["order"].ToString();
+                Session.Remove("buyitem");
             }
             else
             {
                 Label1.Text =  "交易完成 , 感謝您的購買!";
                 Label2.Text = Session["order"].ToString();
+                Session.RemoveAll();
             }
             
 

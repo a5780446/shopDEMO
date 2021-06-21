@@ -29,6 +29,7 @@ namespace shopDEMO
 
             SqlDataAdapter cmd = new SqlDataAdapter($"select * from orderout where userID=N'{name}'", conn.ConnectionString);
 
+
             DataSet ds = new DataSet();
             cmd.Fill(ds, "orderout");
 
@@ -38,6 +39,26 @@ namespace shopDEMO
 
             DetailsView1.Visible = false;
             Button6.Visible = false;
+        }
+
+        protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            string id = GridView1.Rows[e.NewSelectedIndex].Cells[0].Text; //取得點擊行ID
+
+            string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+            SqlConnection conn = new SqlConnection(s_data);
+            //本機用
+            //SqlConnection conn = new SqlConnection("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = member; Persist Security Info = True; User ID = TonyDU; Password = a5832463");
+            SqlDataAdapter cmd = new SqlDataAdapter($"select * from orderin where orderid={id}", conn);
+
+            DataSet ds = new DataSet();
+            cmd.Fill(ds, "orderin");
+
+            DataTable dt = ds.Tables["orderin"];
+            GridView2.DataSource = dt;
+            GridView2.DataBind();
+
+            GridView1.Visible = false;
         }
     }
 }

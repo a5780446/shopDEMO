@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>About - tshirtwebsitetemplate</title>
+	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
 </head>
 
@@ -46,8 +46,8 @@
                             <Columns>
                                 <asp:BoundField DataField="id" HeaderText="留言帳號" ReadOnly="True" SortExpression="id">
                                 <ControlStyle Height="50px" />
-                                <HeaderStyle Height="40px" />
-                                <ItemStyle HorizontalAlign="Center" />
+                                <HeaderStyle Height="30px" />
+                                <ItemStyle HorizontalAlign="Center" Height="30px" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="name" HeaderText="留言者" SortExpression="name">
                                 <ItemStyle HorizontalAlign="Center" />
@@ -58,7 +58,10 @@
                                 <asp:BoundField DataField="date" HeaderText="留言日期" SortExpression="date">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:CommandField ShowSelectButton="True" SelectText="查看留言">
+                                <asp:CommandField ShowSelectButton="True" SelectText="查看">
+                                <ItemStyle HorizontalAlign="Center" />
+                                </asp:CommandField>
+                                <asp:CommandField DeleteText="移除" ShowDeleteButton="True">
                                 <ItemStyle HorizontalAlign="Center" />
                                 </asp:CommandField>
                             </Columns>

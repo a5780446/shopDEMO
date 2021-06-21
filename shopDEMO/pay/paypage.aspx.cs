@@ -48,7 +48,7 @@ namespace shopDEMO.pay
                 orderid += item;
             }
 
-            orderid += x.Next(0001, 1000).ToString();
+            orderid += x.Next(100, 999).ToString();
             Label1.Text = orderid.ToString();
 
             Session["order"] = orderid;
@@ -104,6 +104,7 @@ namespace shopDEMO.pay
                         Session["buyitem"] = dt;
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
                         GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[3].Text = totalqty().ToString() + "件商品";
                         Response.Redirect("cart.aspx");
                     }
                     else
@@ -145,6 +146,7 @@ namespace shopDEMO.pay
                         //----------//
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
                         GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[3].Text = totalqty().ToString() + "件商品";
                         Response.Redirect("cart.aspx");
 
 
@@ -161,6 +163,7 @@ namespace shopDEMO.pay
                     {
                         //GridView1.FooterRow.Cells[2].Text = "總價格";
                         GridView1.FooterRow.Cells[5].Text = "共:" + paytotal().ToString() + "NTD";
+                        GridView1.FooterRow.Cells[3].Text = totalqty().ToString()+"件商品";
                     }
                 }
 
@@ -182,6 +185,21 @@ namespace shopDEMO.pay
             return pay;
         }
 
+        public int totalqty()  //計算數量
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)Session["buyitem"];
+            int nrow = dt.Rows.Count;
+            int i = 0;
+            int x = 0;
+            while (i < nrow)
+            {
+                x += Convert.ToInt32(dt.Rows[i]["qty"].ToString());
+                i += 1;
+            }
+            return x;
+        }
+
         public void update() //訂單外觀
         {
             string userid;
@@ -198,7 +216,7 @@ namespace shopDEMO.pay
             string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
             SqlConnection conn = new SqlConnection(s_data);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into orderout(id,name,tel,take,tips,status,userID) values('" + Label1.Text + "',N'" + TextBox1.Text + "','" + TextBox2.Text + "',N'" + DropDownList1.SelectedValue + "',N'" + TextBox3.Text + "',N'新訂單',N'"+userid+"')", conn);
+            SqlCommand cmd = new SqlCommand("insert into orderout(id,name,tel,take,tips,status,userID) values('" + Label1.Text + "',N'" + TextBox1.Text + "','" + TextBox2.Text + "',N'" + DropDownList1.SelectedValue + "',N'" + TextBox3.Text + "',N'待處理',N'"+userid+"')", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }

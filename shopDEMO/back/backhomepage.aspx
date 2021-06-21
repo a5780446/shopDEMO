@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sellcouth</title>
+	<title>Sellcouth-學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
     <style type="text/css">
         .auto-style2 {

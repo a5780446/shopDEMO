@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>About - tshirtwebsitetemplate</title>
+	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
     <style type="text/css">
 
@@ -52,6 +52,7 @@
                         <asp:Panel ID="Panel1" runat="server" Height="874px">
                             <div class="auto-style7">
                                 <br />
+                                <asp:Button ID="Button9" runat="server" Text="修改進度" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                     <asp:ListItem Value="id">訂單號碼</asp:ListItem>
@@ -70,6 +71,7 @@
                                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="id" Height="251px" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" Width="871px">
                                     <Columns>
                                         <asp:BoundField DataField="id" HeaderText="訂單號碼" />
+                                        <asp:BoundField DataField="userID" HeaderText="會員" />
                                         <asp:BoundField DataField="name" HeaderText="訂購人" />
                                         <asp:BoundField DataField="initdate" HeaderText="訂單日期" />
                                         <asp:TemplateField HeaderText="訂單進度">
@@ -118,6 +120,9 @@
                                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                 </asp:GridView>
+                                <br />
+                                <br />
+                                <br />
                             </div>
                         </asp:Panel>
 				</div>

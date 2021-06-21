@@ -78,12 +78,12 @@
                                 <br />
                                 <br />
                                 <br />
-                                商品圖片:
+                                圖片:
                                 <asp:FileUpload ID="FileUpload1" runat="server" />
 &nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="Label"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" ForeColor="Black"></asp:Label>
                                 &nbsp;
-                                <asp:Label ID="Label2" runat="server" ForeColor="Red" Text="Label"></asp:Label>
+                                <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="上傳" />
                                 <br />

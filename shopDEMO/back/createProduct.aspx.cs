@@ -50,7 +50,7 @@ namespace shopDEMO.back
             cmd.Parameters.Add("@color", SqlDbType.NVarChar, 50).Value = TextBox4.Text;
             cmd.Parameters.Add("@qty", SqlDbType.Int).Value = TextBox5.Text;
             cmd.Parameters.Add("@price", SqlDbType.Int).Value = TextBox6.Text;
-            cmd.Parameters.Add("@image", SqlDbType.NVarChar,50).Value = @"~\pic\"+Label1.Text;
+            cmd.Parameters.Add("@image", SqlDbType.NVarChar,50).Value = ("~/pic/"+ Label1.Text);
             //cmd.Parameters.Add("@[e-mail]", SqlDbType.NVarChar, 50).Value = TextBox5.Text;
 
             cmd.ExecuteNonQuery();

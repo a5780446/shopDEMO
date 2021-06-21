@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sellcouth</title>
+	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
     <style type="text/css">
 
@@ -57,7 +57,7 @@
                             商品尚未結帳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button ID="Button2" runat="server" PostBackUrl="~/product/cart.aspx" Text="點我前往購物車" BackColor="#FD5A02" Height="27px" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server"></asp:Label>
-                            &nbsp;<br /> &nbsp;&nbsp; <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource1" RepeatDirection="Horizontal" BackColor="#FFCC00" BorderColor="#996633" BorderStyle="None" BorderWidth="1px" CellPadding="0" GridLines="Both" OnItemCommand="DataList2_ItemCommand" CssClass="auto-style7" RepeatColumns="4" Height="16px" Width="31px">
+                            &nbsp;<br /> &nbsp;&nbsp; <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource1" RepeatDirection="Horizontal" BackColor="#FFCC00" BorderColor="#996633" BorderStyle="None" BorderWidth="1px" CellPadding="0" GridLines="Both" OnItemCommand="DataList2_ItemCommand" CssClass="auto-style7" RepeatColumns="5" Height="16px" Width="31px">
                                 <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                                 <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
                                 <ItemStyle BackColor="#FFCC00" ForeColor="#003399" Height="50px" />

@@ -13,6 +13,8 @@ namespace shopDEMO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             Panel3.Visible = false;
             DetailsView1.Visible = false;
 

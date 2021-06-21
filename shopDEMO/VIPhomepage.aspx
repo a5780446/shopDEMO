@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sellcouth</title>
+	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
     <style type="text/css">
         .auto-style1 {
@@ -30,6 +30,7 @@
             
                 |
                 <asp:Button ID="Button4" runat="server" PostBackUrl="~/product/cart.aspx" Text="購物車" BackColor="#FFCC00" />
+				<asp:Label ID="Label2" runat="server" ForeColor="#CC6600" Text="Label"></asp:Label>
 				</span>
 				<a id="logo">
 					<a href="shop.html" class="button" style="left: 203px; bottom: 1620px; top: -500px"></a></a><!-- /#logo -->

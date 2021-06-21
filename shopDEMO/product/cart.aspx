@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sellcouth</title>
+	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
     <style type="text/css">
 
@@ -84,7 +84,7 @@
                             <ControlStyle Height="100px" Width="100px" />
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:ImageField>
-                        <asp:CommandField ButtonType="Button" ShowDeleteButton="True" >
+                        <asp:CommandField ButtonType="Button" ShowDeleteButton="True" DeleteText="移除" >
                         <ItemStyle HorizontalAlign="Center" />
                         </asp:CommandField>
                     </Columns>

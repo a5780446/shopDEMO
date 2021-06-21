@@ -68,7 +68,7 @@
                 <br />
                 <br />
                 &nbsp; 建立帳號:&nbsp;
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server" placeholder="英文字母、數字5-10碼"></asp:TextBox>
                 &nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox1" ErrorMessage="格式錯誤" ForeColor="Red" ValidationExpression="[a-zA-Z0-9]{5,10}"></asp:RegularExpressionValidator>
                 <br />
@@ -77,7 +77,7 @@
                 <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="檢查" />
                 <br />
                 　　　　　<br />
-                &nbsp; 建立密碼:&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+                &nbsp; 建立密碼:&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" placeholder="英文字母、數字5-10碼" TextMode="Password"></asp:TextBox>
                 &nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TextBox2" ErrorMessage="格式錯誤" ForeColor="Red" ValidationExpression="[a-zA-Z0-9]{5,10}"></asp:RegularExpressionValidator>
                 <br />
@@ -97,10 +97,9 @@
                 <br />
                 <br />
                 &nbsp; 連絡電話:&nbsp;
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-                &nbsp; (必填)&nbsp;
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBox5" ErrorMessage="行動電話格式錯誤" ForeColor="#FF3300" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
-                &nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox5" runat="server" placeholder="台灣-行動電話"></asp:TextBox>
+                &nbsp; (必填)&nbsp; &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox5" ErrorMessage="不能為空" ForeColor="Red" ValidationGroup="xx"></asp:RequiredFieldValidator>
+                <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="TextBox5" ErrorMessage="行動電話格式錯誤" ForeColor="#FF3300" ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
                 <br />
                 &nbsp; 地址:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>

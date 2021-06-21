@@ -81,17 +81,17 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="密碼不能為空" ForeColor="Red" ValidationGroup="VG1"></asp:RequiredFieldValidator>
                                 <br />
                                 <br />
-                                <asp:Label ID="Label1" runat="server"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                                 <br />
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/createID.aspx">加入會員</asp:HyperLink>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="Button1" runat="server" Height="40px" OnClick="Button1_Click" Text="登入" Width="80px" BackColor="#FF9900" />
+                                <asp:Button ID="Button1" runat="server" Height="40px" OnClick="Button1_Click" Text="登入" Width="80px" BackColor="#66FF33" />
                                 <br />
                                 <br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="Button2" runat="server" Height="30px" OnClick="Button2_Click" Text="放棄" Width="77px" BackColor="#FF9900" />
+                                <asp:Button ID="Button2" runat="server" Height="30px" OnClick="Button2_Click" Text="放棄" Width="77px" BackColor="#FF3300" />
                             </div>
                         </asp:Panel>
                     </td>
