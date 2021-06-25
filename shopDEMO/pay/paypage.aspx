@@ -93,14 +93,14 @@
                                     <td class="auto-style16">收件人:</td>
                                     <td class="auto-style17">
                                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="必填" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="必填" ForeColor="Red" ValidationGroup="green"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style15">手機末三碼:</td>
                                     <td class="auto-style18">
                                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="必填" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="必填" ForeColor="Red" ValidationGroup="green"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -118,14 +118,16 @@
                                     <td class="auto-style18">
                                         <asp:TextBox ID="TextBox3" runat="server" Height="93px" Width="205px" TextMode="MultiLine"></asp:TextBox>
                                         <br />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="必填" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="必填" ForeColor="Red" ValidationGroup="green"></asp:RequiredFieldValidator>
                                         <br />
                                     </td>
                                 </tr>
                             </table>
                             <br />
                             <br />
-                            <asp:Button ID="Button1" runat="server" BackColor="#99FF66" Height="54px" OnClick="Button1_Click" Text="送出訂單" Width="173px" OnClientClick="javascript:if(!window.confirm('確定送出表單?')) window.event.returnValue = false;" />
+                            <asp:Button ID="Button1" runat="server" BackColor="#99FF66" Height="54px" OnClick="Button1_Click" Text="送出訂單" Width="173px" OnClientClick="javascript:if(!window.confirm('確定送出表單?')) window.event.returnValue = false;" ValidationGroup="green" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="Button103" runat="server" BackColor="#FF3300" Height="51px" OnClick="Button103_Click" Text="返回購物" Width="79px" />
                             <br />
                         </asp:Panel>
 			</div> <!-- /#contents -->

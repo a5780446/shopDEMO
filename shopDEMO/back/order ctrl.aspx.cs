@@ -67,6 +67,8 @@ namespace shopDEMO.back
 
 
             Button3.Visible = true;
+
+            DropDownList2.Visible = false;
            
         }
 
@@ -86,7 +88,24 @@ namespace shopDEMO.back
             Response.Redirect("~/homepage.aspx");
         }
 
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string id = GridView1.DataKeys[e.RowIndex].Values[0].ToString();
+
+            string s_data = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["memberConnectionString1"].ConnectionString;
+            SqlConnection conn = new SqlConnection(s_data);
+            SqlCommand cmd = new SqlCommand($"update orderout set status = N'{DropDownList2.SelectedValue}' where id={id} ", conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            Response.Redirect("order ctrl.aspx");
+        }
+
         
+
+
+
+
 
 
 

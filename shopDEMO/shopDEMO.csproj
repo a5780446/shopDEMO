@@ -141,8 +141,7 @@
     <Content Include="pic\1Vv10wqWn6_small.jpg" />
     <Content Include="pic\Adidas_logo.gif" />
     <Content Include="pic\dress-2.jpg" />
-    <Content Include="pic\homelogo.jpg" />
-    <Content Include="pic\LOGO.png" />
+    <Content Include="pic\logoxxxx.png" />
     <Content Include="pic\pant-1.jpg" />
     <Content Include="pic\pant-3.jpg" />
     <Content Include="pic\short-1.jpg" />
@@ -169,6 +168,7 @@
     <Content Include="product\images\shirt-red.jpg" />
     <Content Include="product\productSHOW.aspx" />
     <Content Include="product\shoppage.aspx" />
+    <Content Include="qureyorder.aspx" />
     <Content Include="singin.aspx" />
     <Content Include="tool\upload.aspx" />
     <Content Include="VIPhomepage.aspx" />
@@ -304,6 +304,13 @@
       <DependentUpon>shoppage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qureyorder.aspx.cs">
+      <DependentUpon>qureyorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qureyorder.aspx.designer.cs">
+      <DependentUpon>qureyorder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="singin.aspx.cs">
       <DependentUpon>singin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

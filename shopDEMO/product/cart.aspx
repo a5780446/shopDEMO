@@ -136,11 +136,11 @@
 					</p>
 				</div>
 				<div class="navigation">
-					<a href="index.html">Home</a>|
-					<a href="about.html">About</a>|
-					<a href="blog.html">Blog</a>|
-					<a href="shop.html">Shop</a>|
-					<a href="contact-us.html">Contact Us</a>
+					<a>Home</a>|
+					<a>About</a>|
+					<a>Blog</a>|
+					<a>Shop</a>|
+					<a>Contact Us</a>
 				</div>
 			</div> <!-- /#footer -->
 		</div> <!-- /#page -->

@@ -261,6 +261,11 @@ namespace shopDEMO.pay
             Session.RemoveAll();
             Response.Redirect("~/homepage.aspx");
         }
+
+        protected void Button103_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/product/shoppage.aspx");
+        }
     }
 }
 

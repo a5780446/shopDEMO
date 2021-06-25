@@ -48,9 +48,16 @@
                         <br />
                         <br />
                         <br />
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/homepage.aspx">盡快記下您的訂單號碼~</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/qureyorder.aspx">盡快記下您的訂單號碼~</asp:HyperLink>
                         <br />
                         <br />
+                        <br />
+                        <br />
+                        <asp:Panel ID="Panel1" runat="server" BackColor="#CCFF33" Font-Bold="True" Font-Names="Gill Sans Ultra Bold" ForeColor="Red" Height="249px">
+                            !!! 全國三級警戒 !!!<br /> 停課不停學!<br /> 宅家打遊戲!<br /> 愛妻想追劇!<br /> &nbsp;絕不卡頓的神兵利器盡在~<br />
+                            <br />
+                            <asp:ImageButton ID="ImageButton2" runat="server" Height="71px" ImageUrl="~/pic/logoxxxx.png" PostBackUrl="https://estoreweb2021.azurewebsites.net/" Width="241px" />
+                        </asp:Panel>
                     </td>
                     <td>&nbsp;</td>
                 </tr>

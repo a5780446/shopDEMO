@@ -14,6 +14,10 @@
         .auto-style2 {
             width: 322px;
         }
+        .auto-style3 {
+            left: -1px;
+            top: -1px;
+        }
     </style>
 </head>
 
@@ -54,7 +58,7 @@
 						<img src="images/sale.jpg" alt="Img" />
 					</div>
 				</div>
-				<div id="featured">
+				<div id="featured" class="auto-style3">
 					<ul>
 						<li><img src="images/shirt-red.jpg" alt="shirt" /></li>
 						<li><img src="images/shirt-orange.jpg" alt="shirt" /></li>
@@ -62,7 +66,8 @@
 						<li class="last"><img src="images/shirt-blue.jpg" alt="shirt" /></li>
 					</ul>
 					&nbsp;<a href="product/shoppage.aspx" class="button" style="left: 371px; bottom: -18px">shop here!</a>
-					<a href="backsingin.aspx" class="button" style="left: 788px; bottom: -39px">Web Admin</a></div>
+					<a href="backsingin.aspx" class="button" style="left: 786px; bottom: -18px">Web Admin</a><a href="qureyorder.aspx" class="button" style="left: 590px; bottom: -18px">Order</a></div>
+			    <asp:ImageButton ID="ImageButton1" runat="server" Height="45px" ImageUrl="~/pic/logoxxxx.png" PostBackUrl="https://estoreweb2021.azurewebsites.net/" Width="156px" />
 			</div> <!-- /#contents -->
 			<div id="footer">
 				<div id="description">

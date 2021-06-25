@@ -52,8 +52,8 @@
                         <asp:Panel ID="Panel1" runat="server" Height="874px">
                             <div class="auto-style7">
                                 <br />
-                                <asp:Button ID="Button9" runat="server" Text="修改進度" />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" Height="39px" OnClick="Button3_Click" Text="返回" Width="61px" BackColor="#FF9933" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                     <asp:ListItem Value="id">訂單號碼</asp:ListItem>
                                     <asp:ListItem Value="name">訂購人</asp:ListItem>
@@ -65,10 +65,15 @@
                                 &nbsp;&nbsp;
                                 <asp:Label ID="Label2" runat="server"></asp:Label>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="Button3" runat="server" Height="39px" OnClick="Button3_Click" Text="返回" Width="61px" BackColor="#FF9933" />
+                                <asp:DropDownList ID="DropDownList2" runat="server">
+                                    <asp:ListItem>處理中</asp:ListItem>
+                                    <asp:ListItem>已寄出</asp:ListItem>
+                                    <asp:ListItem>已完成訂單</asp:ListItem>
+                                </asp:DropDownList>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <br />
                                 <br />
-                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="id" Height="251px" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" Width="871px">
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="id" Height="251px" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" Width="871px" OnRowUpdating="GridView1_RowUpdating">
                                     <Columns>
                                         <asp:BoundField DataField="id" HeaderText="訂單號碼" />
                                         <asp:BoundField DataField="userID" HeaderText="會員" />
@@ -86,6 +91,11 @@
                                         <asp:TemplateField HeaderText="訂單詳情" ShowHeader="False">
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select" Text="選取"></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="修改">
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Update">編輯</asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
@@ -133,14 +143,7 @@
 						<li><img src="images/shirt-green.jpg" alt="shirt" /></li>
 						<li class="last"><img src="images/shirt-blue.jpg" alt="shirt" /></li>
 					</ul>
-					<a href="shop.html" class="button">shop here!</a> 
-				</div>
-			</div> <!-- /#contents -->
-			<div id="footer">
-				<div id="description">
-					<div>
-						<a href="index.html" class="logo"></a>
-						<span>&copy; Copyright &copy; 2011. <a href="index.html">Company name</a> All rights reserved</span>
+					<a href="shop.html" class="button">shop here!copy; Copyright &copy; 2011. <a href="index.html">Company name</a> All rights reserved</span>
 					</div>
 					<p>
 						This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text.

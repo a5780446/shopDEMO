@@ -87,13 +87,13 @@ namespace shopDEMO.back
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
-        /// Button9 控制項。
+        /// Button3 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button9;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// DropDownList1 控制項。
@@ -132,13 +132,13 @@ namespace shopDEMO.back
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Button3 控制項。
+        /// DropDownList2 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
         /// GridView1 控制項。

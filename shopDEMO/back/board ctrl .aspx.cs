@@ -11,7 +11,10 @@ namespace shopDEMO.back
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                DetailsView1.Visible = false;
+            }
 
         }
 
