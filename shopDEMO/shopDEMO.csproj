@@ -124,6 +124,7 @@
     <Content Include="pay\css\fonts\corben-bold-webfont.svg" />
     <Content Include="pay\css\style.css" />
     <Content Include="pay\finish.aspx" />
+    <Content Include="pay\game.aspx" />
     <Content Include="pay\images\bg-body.jpg" />
     <Content Include="pay\images\bg-button.jpg" />
     <Content Include="pay\images\bg-header.jpg" />
@@ -138,12 +139,17 @@
     <Content Include="pay\images\shirt-orange.jpg" />
     <Content Include="pay\images\shirt-red.jpg" />
     <Content Include="pay\paypage.aspx" />
+    <Content Include="pic\10OFF.jpg" />
     <Content Include="pic\1Vv10wqWn6_small.jpg" />
+    <Content Include="pic\20OFF.jpg" />
+    <Content Include="pic\30OFF.jpg" />
     <Content Include="pic\Adidas_logo.gif" />
+    <Content Include="pic\coffe.jpg" />
     <Content Include="pic\dress-2.jpg" />
     <Content Include="pic\logoxxxx.png" />
     <Content Include="pic\pant-1.jpg" />
     <Content Include="pic\pant-3.jpg" />
+    <Content Include="pic\qq.png" />
     <Content Include="pic\short-1.jpg" />
     <Content Include="pic\swat-2.jpg" />
     <Content Include="pic\swat2-2.jpg" />
@@ -274,6 +280,13 @@
     </Compile>
     <Compile Include="pay\finish.aspx.designer.cs">
       <DependentUpon>finish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pay\game.aspx.cs">
+      <DependentUpon>game.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pay\game.aspx.designer.cs">
+      <DependentUpon>game.aspx</DependentUpon>
     </Compile>
     <Compile Include="pay\paypage.aspx.cs">
       <DependentUpon>paypage.aspx</DependentUpon>

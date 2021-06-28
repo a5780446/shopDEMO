@@ -7,6 +7,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>學術用途</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />	
+    <style type="text/css">
+        .auto-style1 {
+            margin-right: 0px;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,33 +81,37 @@
                             <SortedDescendingHeaderStyle BackColor="#575357" />
                         </asp:GridView>
                         <br />
-                        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="470px" OnItemCommand="DetailsView1_ItemCommand" Width="800px">
+                        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="470px" OnItemCommand="DetailsView1_ItemCommand" Width="800px" CssClass="auto-style1">
                             <AlternatingRowStyle BackColor="White" />
                             <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                             <EditRowStyle BackColor="#7C6F57" />
                             <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" />
                             <Fields>
-                                <asp:BoundField DataField="id" HeaderText="ID" ReadOnly="True" SortExpression="id">
+                                <asp:BoundField DataField="id" HeaderText="ID" SortExpression="id">
                                 <HeaderStyle Width="100px" />
-                                <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="name" HeaderText="留言者" SortExpression="name" ReadOnly="True" >
-                                <ItemStyle HorizontalAlign="Center" />
+                                <asp:BoundField DataField="name" HeaderText="姓名" SortExpression="name" >
                                 </asp:BoundField>
-                                <asp:BoundField DataField="head" HeaderText="標題" SortExpression="head" ReadOnly="True" >
-                                <ItemStyle HorizontalAlign="Center" />
+                                <asp:BoundField DataField="head" HeaderText="標題" SortExpression="head" >
                                 </asp:BoundField>
-                                <asp:BoundField DataField="conten" HeaderText="內容" SortExpression="conten" ReadOnly="True" >
-                                <ItemStyle HorizontalAlign="Center" />
+                                <asp:BoundField DataField="conten" HeaderText="內容" SortExpression="conten" >
                                 </asp:BoundField>
-                                <asp:BoundField DataField="date" HeaderText="日期" SortExpression="date" ReadOnly="True" >
-                                <ItemStyle HorizontalAlign="Center" />
+                                <asp:BoundField DataField="date" HeaderText="日期" SortExpression="date" >
                                 </asp:BoundField>
-                                <asp:BoundField DataField="feedback" HeaderText="回覆" NullDisplayText="尚未回覆" SortExpression="feedback" >
-                                <ItemStyle HorizontalAlign="Center" />
+                                <asp:BoundField DataField="feedback" HeaderText="管理員回復" NullDisplayText="尚未回覆" SortExpression="feedback" >
                                 </asp:BoundField>
-                                <asp:ButtonField CommandName="return" Text="返回" />
-                                <asp:CommandField EditText="管理者回覆" ShowEditButton="True" />
+                                <asp:TemplateField ShowHeader="False">
+                                    <EditItemTemplate>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="取消"></asp:LinkButton>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="編輯"></asp:LinkButton>
+                                        <br />
+                                        <br />
+                                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="return">返回</asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Fields>
                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -110,47 +119,28 @@
                             <RowStyle BackColor="#E3EAEB" />
                         </asp:DetailsView>
                         <br />
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" SelectCommand="SELECT * FROM [board]" DeleteCommand="DELETE FROM [board] WHERE [id] = @id" InsertCommand="INSERT INTO [board] ([id], [name], [head], [conten], [date], [feedback]) VALUES (@id, @name, @head, @conten, @date, @feedback)" UpdateCommand="UPDATE [board] SET [name] = @name, [head] = @head, [conten] = @conten, [date] = @date, [feedback] = @feedback WHERE [id] = @id">
-                            <DeleteParameters>
-                                <asp:Parameter Name="id" Type="String" />
-                            </DeleteParameters>
+                    <br />
+                    <br />
+                        <br />
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" SelectCommand="SELECT * FROM [board]" InsertCommand="INSERT INTO [board] ([id], [name], [head], [conten], [date], [feedback]) VALUES (@id, @name, @head, @conten, @date, @feedback)" ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
                             <InsertParameters>
                                 <asp:Parameter Name="id" Type="String" />
                                 <asp:Parameter Name="name" Type="String" />
                                 <asp:Parameter Name="head" Type="String" />
                                 <asp:Parameter Name="conten" Type="String" />
                                 <asp:Parameter Name="date" Type="DateTime" />
-                                <asp:Parameter Name="feedback" Type="Object" />
+                                <asp:Parameter Name="feedback" Type="String" />
                             </InsertParameters>
-                            <UpdateParameters>
-                                <asp:Parameter Name="name" Type="String" />
-                                <asp:Parameter Name="head" Type="String" />
-                                <asp:Parameter Name="conten" Type="String" />
-                                <asp:Parameter Name="date" Type="DateTime" />
-                                <asp:Parameter Name="feedback" Type="Object" />
-                                <asp:Parameter Name="id" Type="String" />
-                            </UpdateParameters>
                         </asp:SqlDataSource>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" DeleteCommand="DELETE FROM [board] WHERE [id] = @id" InsertCommand="INSERT INTO [board] ([id], [name], [head], [conten], [date], [feedback]) VALUES (@id, @name, @head, @conten, @date, @feedback)" SelectCommand="SELECT * FROM [board]" UpdateCommand="UPDATE [board] SET [name] = @name, [head] = @head, [conten] = @conten, [date] = @date, [feedback] = @feedback WHERE [id] = @id">
-                            <DeleteParameters>
-                                <asp:Parameter Name="id" Type="String" />
-                            </DeleteParameters>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:memberConnectionString1 %>" InsertCommand="INSERT INTO [board] ([id], [name], [head], [conten], [date], [feedback]) VALUES (@id, @name, @head, @conten, @date, @feedback)" SelectCommand="SELECT * FROM [board]" OldValuesParameterFormatString="original_{0}" ConflictDetection="CompareAllValues">
                             <InsertParameters>
                                 <asp:Parameter Name="id" Type="String" />
                                 <asp:Parameter Name="name" Type="String" />
                                 <asp:Parameter Name="head" Type="String" />
                                 <asp:Parameter Name="conten" Type="String" />
                                 <asp:Parameter Name="date" Type="DateTime" />
-                                <asp:Parameter Name="feedback" Type="Object" />
+                                <asp:Parameter Name="feedback" Type="String" />
                             </InsertParameters>
-                            <UpdateParameters>
-                                <asp:Parameter Name="name" Type="String" />
-                                <asp:Parameter Name="head" Type="String" />
-                                <asp:Parameter Name="conten" Type="String" />
-                                <asp:Parameter Name="date" Type="DateTime" />
-                                <asp:Parameter Name="feedback" Type="Object" />
-                                <asp:Parameter Name="id" Type="String" />
-                            </UpdateParameters>
                         </asp:SqlDataSource>
                         <br />
 				</div>

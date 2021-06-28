@@ -76,7 +76,7 @@ namespace shopDEMO.back
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
-            Response.Redirect("product.aspx");
+            Response.Redirect("product ctrl.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

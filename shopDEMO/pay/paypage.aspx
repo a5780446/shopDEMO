@@ -48,6 +48,7 @@
                         <asp:Panel ID="Panel1" runat="server" Height="714px">
                             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
                             <br />
+                            <asp:Label ID="Label100" runat="server"></asp:Label>
                             <br />
                             清單數量 :
                             <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
@@ -86,6 +87,7 @@
                                 <SortedDescendingCellStyle BackColor="#E1DB9C" />
                                 <SortedDescendingHeaderStyle BackColor="#C2A47B" />
                             </asp:GridView>
+                            <asp:Label ID="Label101" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" ForeColor="#0066FF"></asp:Label>
                             <br />
                             <br />
                             <table class="auto-style13">

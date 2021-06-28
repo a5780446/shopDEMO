@@ -228,6 +228,7 @@ namespace shopDEMO.product
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            Session["pay"] = paytotal().ToString(); //record money session
             Response.Redirect("~/pay/paypage.aspx");
         }
 

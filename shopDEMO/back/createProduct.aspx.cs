@@ -54,6 +54,8 @@ namespace shopDEMO.back
             //cmd.Parameters.Add("@[e-mail]", SqlDbType.NVarChar, 50).Value = TextBox5.Text;
 
             cmd.ExecuteNonQuery();
+
+            Response.Redirect("product ctrl.aspx");
         }
 
         
